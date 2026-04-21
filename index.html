@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CORS Test</title>
+</head>
+<body>
+  <h1>CORS Test</h1>
+
+  <button onclick="fetchData()">Fetch Data</button>
+
+  <script>
+    async function fetchData() {
+      try {
+        const res = await fetch('http://localhost:3000/data');
+        const data = await res.json();
+        console.log(data);
+      } catch (err) {
+        console.error("ERROR:", err);
+      }
+    }
+  </script>
+</body>
+</html>
